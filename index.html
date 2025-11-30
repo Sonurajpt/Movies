@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Crimson — Movies & Streams | K T Movies (Demo)</title>
+
+  <!-- SEO meta -->
+  <meta name="description" content="Stream and browse curated movies and web series — responsive, fast and SEO-optimised. Demo site inspired by the design you shared.">
+  <meta name="keywords" content="movies, web series, streaming, watch online, video player, responsive">
+  <link rel="canonical" href="https://www.example.com/">
+
+  <!-- Open Graph (social) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Crimson — Movies & Streams">
+  <meta property="og:description" content="Stream curated movies and web series on a fast, responsive site optimized for SEO.">
+  <meta property="og:url" content="https://www.example.com/">
+  <meta property="og:image" content="/images/og-image.jpg">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crimson — Movies & Streams">
+  <meta name="twitter:description" content="Stream curated movies and web series on a fast, responsive site optimized for SEO.">
+
+  <!-- Structured data (Website + Organization) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Crimson Demo",
+    "url": "https://www.example.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.example.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Basic CSS: responsive, mobile-first -->
+  <style>
+    :root{--accent:#E11D48;--bg:#0f172a;--card:#0b1220;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;margin:0;background:#05060a;color:#e6eef8;line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(2,6,23,0.9), rgba(2,6,23,0.6));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.02)}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .nav{display:flex;gap:1rem;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:.75rem;align-items:center}
+    .brand .logo{width:40px;height:40px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .nav-links{display:none;gap:1rem}
+    .search{flex:1;margin-left:1rem}
+    .search input{width:100%;padding:.5rem .75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit}
+
+    main{padding:1.25rem}
+    .hero{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:12px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:.5rem;border-radius:10px;overflow:hidden}
+    .thumb{width:100%;height:170px;background:#071029;border-radius:8px;display:block;object-fit:cover}
+    .meta{padding:.5rem}
+    .meta h3{margin:.25rem 0;font-size:1rem}
+    .meta p{margin:0;color:var(--muted);font-size:.85rem}
+
+    footer{padding:1.25rem;border-top:1px solid rgba(255,255,255,0.02);margin-top:1.5rem;color:var(--muted)}
+
+    /* responsive */
+    @media(min-width:700px){
+      .nav-links{display:flex}
+      .hero{grid-template-columns:2fr 1fr}
+      .grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media(min-width:1000px){
+      .grid{grid-template-columns:repeat(4,1fr)}
+      .thumb{height:200px}
+    }
+
+    /* small utilities */
+    .chip{display:inline-block;padding:.25rem .5rem;border-radius:999px;background:rgba(255,255,255,0.03);font-size:.78rem}
+    .btn{display:inline-block;padding:.5rem .75rem;border-radius:8px;background:var(--accent);color:white;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div>
+          <div style="font-weight:700">K T Movies</div>
+          <div style="font-size:.78rem;color:var(--muted)">Watch free streaming — demo</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#movies">Movies</a>
+        <a href="#series">Series</a>
+        <a href="#categories">Categories</a>
+      </div>
+
+      <div style="width:300px" class="search">
+        <input id="search" placeholder="Search movies, series..." aria-label="Search movies">
+      </div>
+
+      <nav style="display:flex;gap:.5rem;align-items:center">
+        <a class="btn" href="#explore">Explore</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1 style="margin:0 0 .25rem 0">Featured: Blade of Crimson</h1>
+        <p style="margin:0 0 .75rem 0;color:var(--muted)">Top picks, hand-curated. Responsive, SEO-friendly demo of the requested layout.</p>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <span class="chip">HD</span>
+          <span class="chip">2025</span>
+          <span class="chip">Action</span>
+        </div>
+        <div style="margin-top:.75rem">
+          <a class="btn" href="#player" id="open-player">Play Trailer</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3 style="margin-top:0">Top Categories</h3>
+        <ul style="padding:0;margin:0;list-style:none;display:grid;gap:.5rem">
+          <li class="card"><div class="meta"><strong>Netflix</strong><div style="color:var(--muted)">Popular picks</div></div></li>
+          <li class="card"><div class="meta"><strong>Amazon Prime</strong><div style="color:var(--muted)">Top rated</div></div></li>
+          <li class="card"><div class="meta"><strong>MX Player</strong><div style="color:var(--muted)">Free movies</div></div></li>
+        </ul>
+      </aside>
+    </section>
+
+    <section style="margin-top:1rem">
+      <h2 id="movies">Trending Movies</h2>
+      <div class="grid" id="cards-grid">
+        <!-- dynamic cards inserted here -->
+      </div>
+    </section>
+
+    <!-- lightweight video modal / player -->
+    <div id="player-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;padding:1rem;z-index:90">
+      <div style="max-width:900px;width:100%">
+        <div style="background:var(--card);border-radius:12px;padding:1rem">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem">
+            <strong>Trailer — Blade of Crimson</strong>
+            <button id="close-player" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit">Close</button>
+          </div>
+          <video id="player" controls playsinline style="width:100%;height:auto;border-radius:8px;background:#000">
+            <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <section id="series" style="margin-top:1.25rem">
+      <h2>Recommended Series</h2>
+      <div class="grid" id="series-grid"></div>
+    </section>
+
+    <section id="contact" style="margin-top:1.25rem">
+      <h2>Contact</h2>
+      <p style="color:var(--muted)">This is a demo site. To make it fully dynamic connect the API endpoints noted below.</p>
+      <form id="contact-form" style="display:grid;gap:.5rem;max-width:640px">
+        <input name="name" placeholder="Your name" required style="padding:.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+        <input name="email" type="email" placeholder="Email" required style="padding:.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+        <textarea name="message" placeholder="Message" rows="4" style="padding:.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit"></textarea>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div>© <span id="year"></span> K T Movies — Demo. All rights reserved.</div>
+        <div style="color:var(--muted)">Built for SEO & speed • Mobile-first • Lazy images</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- JS: dynamic rendering, search, lazy loading -->
+  <script>
+    // sample data - replace with API responses from your backend (e.g. /api/movies?page=1)
+    const sampleMovies = [
+      {id:1,title:'Blade of Crimson',desc:'High-octane action thriller',img:'https://picsum.photos/seed/1/800/450',year:2025,tag:'Action'},
+      {id:2,title:'Midnight Echo',desc:'Mystery & suspense',img:'https://picsum.photos/seed/2/800/450',year:2024,tag:'Thriller'},
+      {id:3,title:'Sunlit Road',desc:'Heartfelt drama',img:'https://picsum.photos/seed/3/800/450',year:2023,tag:'Drama'},
+      {id:4,title:'The Last Orbit',desc:'Sci-fi adventure',img:'https://picsum.photos/seed/4/800/450',year:2025,tag:'Sci-Fi'},
+      {id:5,title:'City of Strings',desc:'Musical romance',img:'https://picsum.photos/seed/5/800/450',year:2022,tag:'Romance'},
+      {id:6,title:'Hidden Cove',desc:'Survival thriller',img:'https://picsum.photos/seed/6/800/450',year:2021,tag:'Adventure'},
+      {id:7,title:'Glass Horizon',desc:'Tech noir',img:'https://picsum.photos/seed/7/800/450',year:2025,tag:'Drama'},
+      {id:8,title:'Echoes of Home',desc:'Family saga',img:'https://picsum.photos/seed/8/800/450',year:2020,tag:'Family'}
+    ];
+
+    const sampleSeries = [
+      {id:101,title:'Crimson Nights',img:'https://picsum.photos/seed/101/800/450',seasons:3},
+      {id:102,title:'Signal Lost',img:'https://picsum.photos/seed/102/800/450',seasons:2},
+      {id:103,title:'Neon Streets',img:'https://picsum.photos/seed/103/800/450',seasons:1}
+    ];
+
+    function renderCards(list,containerId){
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      list.forEach(item => {
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <img class="thumb" loading="lazy" alt="${escapeHtml(item.title)} thumb" src="${item.img}">
+          <div class="meta">
+            <h3>${escapeHtml(item.title)}</h3>
+            <p>${escapeHtml(item.desc || (item.seasons? item.seasons + ' seasons':'No description'))}</p>
+            <div style="margin-top:.5rem"><small style="color:var(--muted)">${item.year||''}</small></div>
+          </div>`;
+        el.addEventListener('click', ()=>{ openPlayer(item) });
+        container.appendChild(el);
+      })
+    }
+
+    function escapeHtml(s){return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+    function openPlayer(item){
+      document.getElementById('player-modal').style.display='flex';
+      // optionally change src to item-specific trailer
+    }
+    document.getElementById('open-player').addEventListener('click', function(e){e.preventDefault(); openPlayer({})});
+    document.getElementById('close-player').addEventListener('click', ()=> document.getElementById('player-modal').style.display='none');
+
+    // search filtering (client-side). For SEO & scale, implement server-side search (see notes below).
+    document.getElementById('search').addEventListener('input', (e)=>{
+      const q = e.target.value.trim().toLowerCase();
+      if(!q) renderCards(sampleMovies,'cards-grid');
+      else renderCards(sampleMovies.filter(m=> (m.title+m.desc+(m.tag||'')).toLowerCase().includes(q)),'cards-grid');
+    });
+
+    // render initial
+    renderCards(sampleMovies,'cards-grid');
+    renderCards(sampleSeries,'series-grid');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // contact form submit - demo: prevent real submission and show success
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thanks! This demo form is configured client-side. To make it real, POST to your backend (e.g., /api/contact).');
+      this.reset();
+    });
+
+    // Accessibility: allow Esc to close player
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') document.getElementById('player-modal').style.display='none'; });
+
+  </script>
+
+  <!-- Deployment & SEO notes (keep in production):
+       1) Serve pages with fast CDN (Netlify, Vercel, Cloudflare) and enable compression (brotli/gzip).
+       2) For large sites, implement server-side rendering (SSR) or prerendering so each movie has distinct HTML and metadata (important for SEO).
+       3) Provide /sitemap.xml and /robots.txt; submit sitemap to Google Search Console.
+       4) Use descriptive, unique meta title & description per content page; include structured data for Movie/VideoObject when publishing media.
+       5) Use lazy-loading for images and proper srcset for responsive images.
+       6) For analytics use Google Analytics / Search Console + privacy policy.
+       7) Connect real API endpoints: GET /api/movies, GET /api/series, POST /api/contact. Return JSON and implement server-side pagination.
+  -->
+</body>
+</html>
